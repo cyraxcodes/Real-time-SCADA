@@ -1,0 +1,19 @@
+.line{
+    height: 200px;
+    width: 4px;
+    background-color: black;
+    position: relative;
+    top: -20px;
+    left: 30px;
+    z-index: -1;
+}
+
+.h-line{
+    height: 4px;
+    width: 1113px;
+    background-color: black;
+    position: relative;
+    left: 100px;
+    top: -17px;
+    z-index: -1;
+}

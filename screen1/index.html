@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body onload="showUser('11KV_%20FANCY_BAZAR')">
+  <div class="header">
+    <div class="menu" onclick="showmenu()"><img src="images\menu.png" alt="menu">
+      <div class="menu-options" id="menu1">
+        <div class="menu-title">MENU</div>
+        <div class="menu-options-list">
+          <div class="menu-options1">Main Screen</div>
+          <a href="http://localhost/screen2/index.html" target="_blank"><div class="menu-options2">SLD</div></a>
+          <!-- <div class="menu-options3">Login</div> -->
+        </div>
+      </div>
+    </div>
+    <div class="apdcl-logo"><img src="images\APDCL-LOGO-1.png" alt="logo"></div>
+    <div class="apdcl-text">apdcl substation data acquisition system</div>
+  </div>
+  <div class="search">
+    <form>
+      <select name="users" onchange="showUser(this.value)" id="substation">
+        <option value="11KV_%20MS_ROAD">11KV_MS_ROAD</option>
+        <option value="11KV_%20AT_ROAD">11KV_AT_ROAD</option>
+        <option value="11KV_%20LAKHTOKIA">11KV_LAKHTOKIA</option>
+        <option value="11KV_%20FANCY_BAZAR" selected>11KV_FANCY_BAZAR</option>
+        <option value="11KV_%20JAIL">11KV_JAIL</option>
+      </select>
+    </form>
+    <button class="download-info" onclick="showoptions()" id="downloadbtn">Download Data</button>
+    <div class="download-options" id="download-items">
+      <form method="post" action="export.php">
+      <span>From: </span><input type="date" name="start" class="inp">
+      <span>To: </span><input type="date" name="end" class="inp">
+      <span>Substation: </span><input type="text" name="substation" placeholder="Type a substation name" class="inp">
+      <span class="warning">*Please refrain from using whitespaces. Use underscore instead!</span>
+      <button type="submit" class="go">Go</button>
+    </form>
+    </div>
+  </div>
+  <div class="table" style="position: relative; left: 0px; top: -100px;">
+    <table>
+      <tr>
+        <th>Voltage</th>
+        <th>Ampere</th>
+        <th>Power Factor</th>
+        <th>Megawatt(s)</th>
+        <div class="v-line"></div>
+      </tr>
+      <tr>
+        <td id="vol">ref</td>
+        <div class="voltage-info">
+          <p>Voltage R_Y: <span id="vol_r_y"></span></p>
+          <p>Voltage Y_B: <span id="vol_y_b"></span></p>
+          <p>Voltage B_R: <span id="vol_b_r"></span></p>
+        </div>
+        <td id="amp">Maria</td>
+        <div class="current-info">
+          <p>Ampere L1: <span id="amp_l1"></span></p>
+          <p>Ampere L2: <span id="amp_l2"></span></p>
+          <p>Ampere L3: <span id="amp_l3"></span></p>
+        </div>
+        <td id="pf">Germany</td>
+        <td id="mw">gt</td>
+      </tr>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
